@@ -1,0 +1,5 @@
+# Wokwi build products / local editor state
+wokwi-state.json
+.vscode/
+.DS_Store
+Thumbs.db

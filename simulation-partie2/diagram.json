@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "author": "Gilet connecte - Partie 2 (simulation Wokwi)",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 10,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potPulse",
+      "top": -120,
+      "left": 300,
+      "attrs": {
+        "value": "160"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": 35,
+      "left": 300,
+      "attrs": {
+        "temperature": "32",
+        "humidity": "50"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledPulse",
+      "top": 170,
+      "left": 420,
+      "attrs": {
+        "color": "yellow",
+        "label": "Pouls"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rPulse",
+      "top": 170,
+      "left": 490,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledTemp",
+      "top": 240,
+      "left": 420,
+      "attrs": {
+        "color": "red",
+        "label": "Temperature"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rTemp",
+      "top": 240,
+      "left": 490,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledNormal",
+      "top": 310,
+      "left": 420,
+      "attrs": {
+        "color": "green",
+        "label": "Normal"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rNormal",
+      "top": 310,
+      "left": 490,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 390,
+      "left": 420,
+      "attrs": {
+        "volume": "0.3"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnChoc",
+      "top": 170,
+      "left": 220,
+      "attrs": {
+        "label": "Choc",
+        "key": "F",
+        "bounce": "0",
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnECG",
+      "top": 240,
+      "left": 220,
+      "attrs": {
+        "label": "ECG",
+        "key": "A",
+        "bounce": "0",
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnCancel",
+      "top": 310,
+      "left": 220,
+      "attrs": {
+        "label": "Annuler",
+        "key": "C",
+        "bounce": "0",
+        "color": "green"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "potPulse:SIG",
+      "esp:D34",
+      "green",
+      []
+    ],
+    [
+      "potPulse:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "potPulse:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "dht:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "dht:SDA",
+      "esp:D15",
+      "green",
+      []
+    ],
+    [
+      "dht:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D25",
+      "rPulse:1",
+      "green",
+      []
+    ],
+    [
+      "rPulse:2",
+      "ledPulse:A",
+      "green",
+      []
+    ],
+    [
+      "ledPulse:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D33",
+      "rTemp:1",
+      "red",
+      []
+    ],
+    [
+      "rTemp:2",
+      "ledTemp:A",
+      "red",
+      []
+    ],
+    [
+      "ledTemp:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D26",
+      "rNormal:1",
+      "green",
+      []
+    ],
+    [
+      "rNormal:2",
+      "ledNormal:A",
+      "green",
+      []
+    ],
+    [
+      "ledNormal:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D27",
+      "buzzer:2",
+      "purple",
+      []
+    ],
+    [
+      "buzzer:1",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "btnChoc:1.l",
+      "esp:D18",
+      "blue",
+      []
+    ],
+    [
+      "btnChoc:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "btnECG:1.l",
+      "esp:D19",
+      "blue",
+      []
+    ],
+    [
+      "btnECG:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "btnCancel:1.l",
+      "esp:D23",
+      "blue",
+      []
+    ],
+    [
+      "btnCancel:2.l",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
